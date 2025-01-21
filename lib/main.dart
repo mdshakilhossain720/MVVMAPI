@@ -13,6 +13,9 @@ Future<void> main() async {
   await setupFlutterNotifications();
   FirebaseMessaging.onBackgroundMessage(firebaseMessagingBackgroundHandler);
   firebaseMessagingForgroundHandler();
+  // Get the FCM token
+  String? token = await FirebaseMessaging.instance.getToken();
+  print("FCM Token: $token");
   runApp(const MyApp());
 }
 
