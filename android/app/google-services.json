@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "895889005926",
+    "project_id": "mvvmapi-384ed",
+    "storage_bucket": "mvvmapi-384ed.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:895889005926:android:22f45770be2c9a9229bca7",
+        "android_client_info": {
+          "package_name": "com.example.mvvmapi"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCOJdWa_oLteNPu0xNNP_w541lJs_Rtgm0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
