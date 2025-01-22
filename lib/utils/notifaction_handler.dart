@@ -14,8 +14,8 @@ Future<void> firebaseMessagingBackgroundHandler(RemoteMessage message) async {
   debugPrint('Handling a background message ${message.messageId}');
 }
 
-// Initialize the [FlutterLocalNotificationsPlugin] package.
-//late FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin;
+
+
 
 Future<void> firebaseMessagingForgroundHandler() async {
   FirebaseMessaging.onMessage.listen((message) {
