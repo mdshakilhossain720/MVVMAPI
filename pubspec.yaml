@@ -45,6 +45,7 @@ dependencies:
   pretty_dio_logger: ^1.4.0
   get: ^4.6.6
   shared_preferences: ^2.3.5
+  flutter_screenutil: ^5.9.3
 
 dev_dependencies:
   flutter_test:
