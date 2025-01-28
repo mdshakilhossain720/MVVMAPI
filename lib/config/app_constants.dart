@@ -3,6 +3,7 @@ class AppConstants {
   static const String notificiations = '$baseUrl/notifications';
   static const String notificationRead = '$baseUrl/notification-read';
   static const String notificationReadAll = '$baseUrl/notification-mark-all';
+  static const String settings = '$baseUrl/master';
 
 
 
