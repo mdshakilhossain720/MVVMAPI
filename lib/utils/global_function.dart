@@ -1,7 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class ApGlobalFunctions {
   ApGlobalFunctions._();
+
+    static void changeStatusBarTheme({required isDark}) {
+    SystemChrome.setSystemUIOverlayStyle(
+      SystemUiOverlayStyle(
+        statusBarColor: Colors.transparent,
+        statusBarIconBrightness: isDark ? Brightness.light : Brightness.dark,
+      ),
+    );
+  }
+
+  static final GlobalKey<NavigatorState> navigatorKey =
+      GlobalKey<NavigatorState>();
 
   static void showCustomSnackbar({
     required String message,
@@ -40,5 +53,5 @@ class ApGlobalFunctions {
     return snackbarKey;
   }
 
-  static GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
+  //static GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 }
