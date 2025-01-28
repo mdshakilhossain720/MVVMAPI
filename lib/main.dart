@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import 'firebase_options.dart';
 import 'utils/notifaction_handler.dart';
+import 'view/all_route_screen.dart';
 import 'view/auth/registration.dart';
 
 Future<void> main() async {
@@ -67,7 +68,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const RegistrationScreen(),
+      home: AllRouteScreen(),
     );
   }
 }
