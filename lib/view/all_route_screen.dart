@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'auth/registration.dart';
+import 'new_payment/payment.dart';
 import 'payment/payment_screen.dart';
 
 class AllRouteScreen extends StatelessWidget {
@@ -39,7 +40,9 @@ class AllRouteScreen extends StatelessWidget {
             SizedBox(
             height: 50,
             width: double.infinity,
-            child: ElevatedButton(onPressed: () {}, child: Text("Home Screen"))),
+            child: ElevatedButton(onPressed: () {
+              Navigator.push(context,MaterialPageRoute(builder: (context) =>  PaymentScreenNew (),));
+            }, child: Text("Payment Screen New"))),
             SizedBox(
             height: 10,),
         ],
