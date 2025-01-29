@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../componements/custom_button.dart';
+
 class PaymentScreenNew extends StatefulWidget {
   const PaymentScreenNew({super.key});
 
@@ -59,18 +61,21 @@ class _PaymentScreenNewState extends State<PaymentScreenNew> {
                                   padding: const EdgeInsets.all(8.0),
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
-                                    crossAxisAlignment: CrossAxisAlignment.center,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
                                     children: [
-                                       Icon(
-                                paymentMethods[index]["icon"],
-                                color: selectedIndex == index
-                                    ? Colors.blue
-                                    : Colors.black,
-                              ),
+                                      Icon(
+                                        paymentMethods[index]["icon"],
+                                        color: selectedIndex == index
+                                            ? Colors.blue
+                                            : Colors.black,
+                                      ),
                                       SizedBox(
                                         width: 50,
                                       ),
-                                      Text(paymentMethods[index]["name"],),
+                                      Text(
+                                        paymentMethods[index]["name"],
+                                      ),
                                       Spacer(),
                                       Icon(Icons.arrow_forward_ios),
                                     ],
@@ -80,7 +85,16 @@ class _PaymentScreenNewState extends State<PaymentScreenNew> {
                     ),
                   );
                 }),
-          )
+          ),
+          
+          SizedBox(
+            height: 50,
+              width: double.infinity, 
+              child: ElevatedButton(onPressed: () {
+            
+
+              }, child: Text("Pay Now"))),
+              SizedBox(height: 50,)
         ]),
       ),
     );
