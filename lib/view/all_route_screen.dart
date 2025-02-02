@@ -50,7 +50,7 @@ class AllRouteScreen extends StatelessWidget {
             height: 50,
             width: double.infinity,
             child: ElevatedButton(onPressed: () {
-              Navigator.push(context,MaterialPageRoute(builder: (context) => PalyWidget  (),));
+              Navigator.push(context,MaterialPageRoute(builder: (context) => PlayWidget(),));
             }, child: Text("Video Player"))),
         ],
       ),

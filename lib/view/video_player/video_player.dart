@@ -1,49 +1,58 @@
 import 'package:chewie/chewie.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:video_player/video_player.dart';
 
-class PalyWidget extends StatefulWidget {
-  const PalyWidget({super.key});
+class PlayWidget extends StatefulWidget {
+  const PlayWidget({super.key});
 
   @override
-  State<PalyWidget> createState() => _PalyWidgetState();
+  State<PlayWidget> createState() => _PlayWidgetState();
 }
 
-class _PalyWidgetState extends State<PalyWidget> {
+class _PlayWidgetState extends State<PlayWidget> {
   late VideoPlayerController videoPlayerController;
-  late ChewieController chewieController;
-  bool isVideoIntalized = false;
+  ChewieController? chewieController; // Nullable, only initialized after video loads
+  bool isVideoInitialized = false;
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
-    videoPlayerController = VideoPlayerController.networkUrl(Uri.parse(
-        "https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4"));
-  
-        
-    chewieController = ChewieController(
+    initializeVideo();
+  }
+
+  Future<void> initializeVideo() async {
+    videoPlayerController = VideoPlayerController.networkUrl(
+      Uri.parse("https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4"),
+    );
+
+    await videoPlayerController.initialize(); // Wait for initialization
+
+    setState(() {
+      isVideoInitialized = true;
+      chewieController = ChewieController(
         videoPlayerController: videoPlayerController,
         autoPlay: true,
-        looping: true);
-
-    videoPlayerController.initialize().then((value) {
-      setState(() {
-        isVideoIntalized = true;
-      });
+        looping: true,
+      );
     });
   }
 
   @override
-  Widget build(BuildContext context) {
-    if (!isVideoIntalized) {
-      return AspectRatio(
-          aspectRatio: videoPlayerController.value.aspectRatio,
-          child: Chewie(controller: chewieController));
-    }else{
-      return CircularProgressIndicator();
-    }
+  void dispose() {
+    videoPlayerController.dispose();
+    chewieController?.dispose();
+    super.dispose();
+  }
 
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: isVideoInitialized
+          ? AspectRatio(
+              aspectRatio: videoPlayerController.value.aspectRatio,
+              child: Chewie(controller: chewieController!),
+            )
+          : const CircularProgressIndicator(), // Show loader while video initializes
+    );
   }
 }
