@@ -11,7 +11,7 @@ class RegistrationScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Registration'),
       ),
-      body: Padding(
+      body: Padding(        
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
@@ -34,6 +34,16 @@ class RegistrationScreen extends StatelessWidget {
             
             ),
              SizedBox(height: 30,),
+
+             SizedBox(
+              height: 50,
+              width: double.infinity,
+              child: ElevatedButton(onPressed: (){}, 
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.deepPurple,
+              ),
+              
+              child: Text("Register",style: TextStyle(color: Colors.white ,)))),
                     
           ],
         ),
