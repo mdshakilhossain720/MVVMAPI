@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'auth/registration.dart';
 import 'new_payment/payment.dart';
 import 'payment/payment_screen.dart';
+import 'video_player/video_player.dart';
 
 class AllRouteScreen extends StatelessWidget {
   const AllRouteScreen({super.key});
@@ -45,6 +46,12 @@ class AllRouteScreen extends StatelessWidget {
             }, child: Text("Payment Screen New"))),
             SizedBox(
             height: 10,),
+            SizedBox(
+            height: 50,
+            width: double.infinity,
+            child: ElevatedButton(onPressed: () {
+              Navigator.push(context,MaterialPageRoute(builder: (context) => PalyWidget  (),));
+            }, child: Text("Video Player"))),
         ],
       ),
     );
