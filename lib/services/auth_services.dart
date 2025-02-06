@@ -34,3 +34,6 @@ class AuthServices extends Auth {
   
  
 }
+
+
+final authServiceProvider = Provider((ref) => AuthServices (ref));

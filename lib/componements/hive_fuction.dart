@@ -3,7 +3,7 @@ import 'package:hive_flutter/hive_flutter.dart';
 
 class HiveFunctions { 
 // Box which will use to store the things 
- static final userBox = Hive.box(userHiveBox); 
+ static final userBox = Hive.box('userHiveBox');
 
 // Create or add single data in hive 
 static createUser(Map data) { 
